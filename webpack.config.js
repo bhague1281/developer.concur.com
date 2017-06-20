@@ -1,13 +1,14 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: ['./app-management/entry.jsx'],
   output: {
-    path: './assets/js',
-    filename: 'bundle.js'
+    path: path.join(__dirname, './assets/js'),
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
   },
   module: {
     loaders: [
@@ -16,17 +17,17 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react', 'stage-3']
-        }
+          presets: ['es2015', 'react', 'stage-3'],
+        },
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader'
-      }
-    ]
+        loader: 'eslint-loader',
+      },
+    ],
   },
   plugins: [
-    new webpack.EnvironmentPlugin(['DEVCENTER_API_FORMS', 'DEVCENTER_API_ORCHESTRATION'])
-  ]
-}
+    new webpack.EnvironmentPlugin(['DEVCENTER_API_FORMS']),
+  ],
+};
