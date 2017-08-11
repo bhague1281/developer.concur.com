@@ -51,8 +51,6 @@
         url: /api-reference/common/list-item/
       - title: Locations
         url: /api-reference/common/locations/locations-resource.html
-      - title: Suppliers
-        url: /api-reference/common/suppliers/suppliers-resource.html
 - title: Direct Connects
   url: ''
   children:
